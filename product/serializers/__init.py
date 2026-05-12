@@ -1,0 +1,3 @@
+from .product_serializers import ProductSerializer
+from .category_serializers import CategorySerializer
+from .product_exercise_serializers import ProductSerializer as ProductExerciseSerializer
