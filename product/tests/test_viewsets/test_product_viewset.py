@@ -38,7 +38,7 @@ class TestProductViewSet(APITestCase):
         data = json.dumps({
             'title': 'notebook',
             'price': 800.00,
-            'categories_id': [ category.id ]
+            'category': [ category.id ]
         })
 
         response = self.client.post(
@@ -50,6 +50,8 @@ class TestProductViewSet(APITestCase):
         self.assertEqual(response.status_code, status.HTTP_201_CREATED)
 
         created_product = Product.objects.get(title='notebook')
+
+        print(response.content)
 
         self.assertEqual(created_product.title, 'notebook')
         self.assertEqual(created_product.price, 800.00)
