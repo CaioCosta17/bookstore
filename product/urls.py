@@ -1,6 +1,3 @@
-#!/usr/bin/env python
-# -*- coding: utf-8 -*-
-
 from django.urls import path, include
 from rest_framework import routers
 
@@ -12,4 +9,5 @@ router.register(r'category', ProductViewSet, basename='category')
 
 urlpatterns = [
     path('', include(router.urls)),
+    path('', include('product.simple_urls'))
 ]
